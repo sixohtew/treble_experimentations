@@ -10,11 +10,11 @@ if [ -z "$USER" ];then
 fi
 export LC_ALL=C
 
-aosp="android-8.1.0_r43"
-phh="android-8.1"
+aosp="android-9.0.0_r3"
+phh="android-9.0"
 
 if [ "$1" == "android-9.0" ];then
-    aosp="android-9.0.0_r1"
+    aosp="android-9.0.0_r3"
     phh="android-9.0"
 fi
 
@@ -33,7 +33,7 @@ fi
 repo sync -c -j 1 --force-sync
 (cd device/phh/treble; git clean -fdx; bash generate.sh)
 (cd vendor/foss; git clean -fdx; bash update.sh)
-
+https://github.com/BlissRoms/treble_patches/tree/p9.0
 . build/envsetup.sh
 
 buildVariant() {
